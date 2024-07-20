@@ -1,0 +1,37 @@
+@use "src/styles/variables" as *;
+@use "src/styles/breakpoints" as *;
+
+.btn {
+    all: unset;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border-radius: 8px;
+    min-width: 120px;
+    min-height: 31px;
+    cursor: pointer;
+    transform: all 0.5s;
+    box-shadow: var(--box-shadow);
+    font-size: $font-size-7;
+    transition: all 0.25s;
+    &:active{
+        font-size: $font-size-7 * 0.91;
+    }
+
+    svg {
+        margin-right: 8px;
+    }
+}
+
+.btn-primary{
+    color: var(--primary);
+    background-color: var(--background);
+    text-shadow: 0px 0px 10px var(--secondary);
+    &:active{
+        box-shadow: var(--box-shadow-inset);
+        color: var(--g-primary-op70);
+        text-shadow: 0px 0px 10px var(--g-primary-op30);
+    }
+}

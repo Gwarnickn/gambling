@@ -1,0 +1,74 @@
+@mixin breakpoint($point, $orientation: "") {
+    @if $point == desktop {
+      @if $orientation == landscape {
+        @media (max-width: 1810px) and (orientation: landscape) {
+          @content;
+        }
+      } @else if $orientation == portrait {
+        @media (max-width: 1810px) and (orientation: portrait) {
+          @content;
+        }
+      } @else {
+        @media (max-width: 1810px) {
+          @content;
+        }
+      }
+    } @else if $point == laptop_big {
+      @if $orientation == landscape {
+        @media (max-width: 1601px) and (orientation: landscape) {
+          @content;
+        }
+      } @else if $orientation == portrait {
+        @media (max-width: 1601px) and (orientation: portrait) {
+          @content;
+        }
+      } @else {
+        @media (max-width: 1601px) {
+          @content;
+        }
+      }
+    }@else if $point == laptop_medium {
+      @if $orientation == landscape {
+        @media (max-width: 1560px) and (orientation: landscape) {
+          @content;
+        }
+      } @else if $orientation == portrait {
+        @media (max-width: 1560px) and (orientation: portrait) {
+          @content;
+        }
+      } @else {
+        @media (max-width: 1560px) {
+          @content;
+        }
+      }
+    } @else if $point == tablet {
+      @if $orientation == landscape {
+        @media (max-width: 867px) and (orientation: landscape) {
+          @content;
+        }
+      } @else if $orientation == portrait {
+        @media (max-width: 867px) and (orientation: portrait) {
+          @content;
+        }
+      } @else {
+        @media (max-width: 867px) {
+          @content;
+        }
+      }
+    } @else if $point == phone {
+      @if $orientation == landscape {
+        @media (max-width: 431px) and (orientation: landscape) {
+          @content;
+        }
+      } @else if $orientation == portrait {
+        @media (max-width: 431px) and (orientation: portrait) {
+          @content;
+        }
+      } @else {
+        @media (max-width: 431px) {
+          @content;
+        }
+      }
+    } 
+  }
+  

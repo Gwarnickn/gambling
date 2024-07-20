@@ -1,11 +1,14 @@
 import React from 'react';
-import './App.scss';
+import './main.scss';
+import {Route, Routes, useLocation, useNavigate} from 'react-router-dom';
+import Homepage from './pages/Homepage/Homepage';
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <Routes>
+      <Route path='*' element={<Homepage />} />
+      <Route path='/' element={<Homepage />} />
+    </Routes>
   );
 }
 

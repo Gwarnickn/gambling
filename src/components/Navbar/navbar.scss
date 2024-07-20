@@ -1,0 +1,49 @@
+@use "src/styles/variables" as *;
+@use "src/styles/breakpoints" as *;
+
+.navbar{
+    display: flex;
+    width: 100vw;
+    z-index: 101;
+    padding: 24px 128px;
+    justify-content: space-around;
+    .buttons{
+        width: 250px;
+        height: 50px;
+    }
+    .account-and-media{
+        display: flex;
+        gap: 16px;
+        .media-container{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            .media{
+                background-color: var(--background);
+                padding: 8px;
+                height: 24px;
+
+                border-radius: 50%;
+                box-shadow: var(--box-shadow);
+                transition: all 0.25s;
+                svg{
+                    width: 24px;
+                    aspect-ratio: 1 / 1;
+                    transition: all 0.25s;
+                    path{
+                        fill: var(--light);
+                    }
+                }
+                &:hover{
+                    box-shadow: var(--box-shadow-inset);
+                    svg{
+                        scale: 0.91;
+                        path{
+                            fill: var(--light-hover);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
