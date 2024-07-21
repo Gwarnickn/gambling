@@ -3,19 +3,20 @@ import './button.scss';
 
 type ButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement> & {
-    href?: string
+    href?: string,
+    className?: string,
 };
 
-const Button: FunctionComponent<ButtonProps> = ({children,...props}) => {
+const Button: FunctionComponent<ButtonProps> = ({children, className, ...props}) => {
     if (props.href) {
         return (
-            <a href={props.href} className="btn btn-primary">
+            <a href={props.href} className={`btn ${className}`}>
                 {children}
             </a>
         );
     } else {
         return (
-            <button  className="btn btn-primary" type="button" {...props}>
+            <button  className={`btn ${className}`} type="button" {...props}>
                 {children}
             </button>
         );
