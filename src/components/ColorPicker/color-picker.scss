@@ -4,17 +4,18 @@
 .color-picker{
     display: flex;
     .theme-btn{
-        position: absolute;
+        position: relative;
         min-width: 170px;
         flex-direction: column;
-        gap: 0px;
-        padding: 8px 12px 8px 12px;
+        padding: 8px 12px 0px 12px;
+        overflow: hidden;
         p{
             min-height: 36px;
             width: 100%;
             align-items: center;
             display: flex;
             justify-content: center;
+            margin-bottom: 8px;
         }
     }
     .picker-open{
@@ -22,13 +23,22 @@
         box-shadow: var(--box-shadow-inset);
         color: var(--primary-hover);
         text-shadow: 0px 0px 10px var(--g-primary-op30);
-
+        .block-picker{
+            animation-name: open;
+        }
+    }
+    .picker-close{
+        .block-picker{
+            animation-name: close;
+        }
     }
     .block-picker{
         text-shadow: 0px 0px 0px transparent !important;
-        background-color: transparent !important;
         box-shadow: 0px 0px 0px transparent !important;
+        background-color: transparent !important;
         transition: all 1s !important;
+        animation-duration: 1s !important;
+        animation-fill-mode: forwards !important;
         div{
             transition: all 0.25s !important;
         }
@@ -54,3 +64,19 @@
         }
     }
 }
+@keyframes open {
+    from {
+        height: 0px;
+    }
+    to {
+        height: 288px;
+    }
+  }
+@keyframes close{
+    from {
+        height: 288px;
+    }
+    to {
+        height: 0px;
+    }
+  }

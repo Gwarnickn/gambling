@@ -1,5 +1,4 @@
 body{
-
     --g-background-light: #dde1e7;
     --g-background-dark: #26282B;
 
@@ -12,12 +11,19 @@ body{
     --g-light-op07: #dde1e7b3;
 
     --g-dark: #26282B;
+    --g-dark-op07: #26282Bb3;
     
-    --gray-1: rgb(67, 67, 67);
+    --g-gray-1: rgb(67, 67, 67);
     --g-gray-1-op05: rgba(67, 67, 67, 0.5);
     --g-gray-1-op03: rgba(67, 67, 67, 0.3);
+
+    --g-gray-2: rgb(94,104,121);
+    --g-gra-2-op30: rgba(94,104,121,0.3);
 
     --black: rgb(0,0,0);
     --g-black-op05: rgba(0, 0, 0, 0.5);
     --g-black-op03: rgba(0, 0, 0, 0.3);
+
+    --white: rgb(255,255,255);
+    --g-white-op45 :rgba(255,255,255,0.45);
 }

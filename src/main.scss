@@ -6,6 +6,8 @@
 *{
     margin: 0px;
     padding: 0px;
+    transition-property: background-color, box-shadow, filter, text-shadow;
+    transition-duration: 0.25s;
 }
 
 
@@ -13,6 +15,7 @@ body{
     font-family: $primary-font;
     font-weight: 200;
     overflow-x: hidden;
+    color: var(--font-color);
 }
 
 .is-size-1 {

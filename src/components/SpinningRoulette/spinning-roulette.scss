@@ -1,0 +1,41 @@
+@use "src/styles/variables" as *;
+@use "src/styles/breakpoints" as *;
+
+.spinning-roulette{
+    width: 400px;
+    height: 400px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-inherit);
+    display: grid;
+    transition: all 0.25s;
+    border-radius: 8px;
+    padding: 24px;
+    .spinning-roulette-model3D{
+        height: 400px;
+        width: 400px;
+        grid-area: 1 / 1 / 1 / 1;
+        opacity: 0;
+        transition: all 0.25s;
+        background-color: var(--background);
+        border-radius: 8px;
+    }
+    .spinning-roulette-loading{
+        display: flex;
+        width: 400px;
+        height: 400px;
+        grid-area: 1 / 1 / 1 / 1;
+        justify-content: center;
+        align-items: center;
+        font-size: $font-size-3;
+        transition: all 0.33s;
+    }
+}
+.loaded-100{
+    box-shadow: var(--box-shadow-inset);
+    .spinning-roulette-model3D{
+        opacity: 1;
+    }
+    .spinning-roulette-loading{
+        opacity: 0;
+    }
+}

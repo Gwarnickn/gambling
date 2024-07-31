@@ -45,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "@types/three": "^0.167.0",
     "react-router-dom": "^6.25.1"
   }
 }

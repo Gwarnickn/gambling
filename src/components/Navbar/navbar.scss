@@ -7,10 +7,23 @@
     z-index: 101;
     padding: 24px 128px;
     justify-content: space-around;
+    align-items: flex-start;
     .buttons{
         display: flex;
-        width: 480px;
+        align-items: flex-start;
         gap: 16px;
+        .theme-box{
+            height: 24px;
+            margin: 14px 0px 14px -8px;
+            svg{
+                width: 24px;
+                height: 24px;
+                transition: all 0.25s;
+                path{
+                    stroke: var(--primary);
+                }
+            }
+        }
     }
     .account-and-media{
         display: flex;

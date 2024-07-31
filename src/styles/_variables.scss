@@ -18,14 +18,22 @@ $primary-font: "NunitoSans", sans-serif;
 
 
 
-body,
-body.deafault-theme{
+body{
     --primary: var(--g-primary);
     --primary-hover: var(--g-primary-op70);
 
     --secondary: var(--g-primary-op50);
 
+    --box-shadow-inherit: 
+        0px 0px 0px transparent,
+        0px 0px 0px transparent,
+        inset 0px 0px 0px transparent,
+        inset 0px 0px 0px transparent;
+}
 
+
+body.dark-theme{
+    
     --background: var(--g-background-dark);
 
     --light: var(--g-light);
@@ -34,6 +42,8 @@ body.deafault-theme{
     --dark: var(--g-dark);
 
     --border: var(--g-gray-1-op03);
+
+    --font-color: var(--g-light);
 
     --box-shadow: 
         -4px -4px 10px var(--g-gray-1-op05),
@@ -47,15 +57,30 @@ body.deafault-theme{
         inset -4px -4px 10px var(--g-gray-1-op03),
         inset 4px 4px 10px var(--g-black-op05);
     
-    --box-shadow-both:
-        -4px -4px 10px var(--g-gray-1-op05),
-        4px 4px 10px var(--g-black-op03),
-        inset -4px -4px 10px var(--g-black-op05),
-        inset 4px 4px 10px var(--g-gray-1-op03);
+}
+
+body.light-theme{
+    --background: var(--g-background-light);
+
+    --light: var(--g-dark);
+    --light-hover: var(--g-dark-op07);
+
+    --dark: var(--g-light);
+
+    --border: var(--g-gra-2-op30);
+
+    --font-color: var(--g-dark);
+
+    --box-shadow: 
+        -5px -5px 9px var(--g-white-op45),
+        5px 5px 9px rgba(94,104,121,0.3),
+        inset 0px 0px 0px var(--g-white-op45),
+        inset 0px 0px 0px rgba(94,104,121,0.3);
+
+    --box-shadow-inset:
+        0px 0px 0px var(--g-white-op45),
+        0px 0px 0px rgba(94,104,121,0.3), 
+        inset -5px -5px 9px var(--g-white-op45), 
+        inset 5px 5px 9px rgba(94,104,121,0.3);
     
-    --box-shadow-both-hover:
-        -4px -4px 10px var(--g-gray-1-op05),
-        4px 4px 10px var(--g-black-op03),
-        inset -4px -4px 10px var(--g-gray-1-op03),
-        inset 4px 4px 10px var(--g-black-op05);
 }
