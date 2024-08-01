@@ -21,7 +21,7 @@ class SpinningRoulette extends Component<{},SpinningRouletteProps>{
     constructor(props: SpinningRoulette) {
         super(props);
         this.state = {
-            isLoading: 'xD', 
+            isLoading: '0', 
         };
         this.containerRef = React.createRef<HTMLDivElement>();
         this.scene = new THREE.Scene();
@@ -40,7 +40,6 @@ class SpinningRoulette extends Component<{},SpinningRouletteProps>{
         const light = new THREE.AmbientLight("#ffffff",1);
         light.name = "light";
         this.scene.add(light);
-
         // const geometry = new THREE.BoxGeometry( 1, 1, 1 );
         // const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
         // const cube = new THREE.Mesh( geometry, material );
