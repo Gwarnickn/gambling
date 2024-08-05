@@ -40,18 +40,6 @@ class SpinningRoulette extends Component<{},SpinningRouletteProps>{
         const light = new THREE.AmbientLight("#ffffff",1);
         light.name = "light";
         this.scene.add(light);
-        // const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-        // const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-        // const cube = new THREE.Mesh( geometry, material );
-        // this.scene.add( cube );
-        // const fbxLoader = new FBXLoader;
-        // fbxLoader.load(
-        //     'models/RouletteModel/source/roulette_spin2.fbx',
-        //     (object) => {
-        //         object.position.y = 10;
-        //         this.scene.add(object)
-            
-        // })
         this.loadingManager.onProgress = async (url, loaded, total) => {
             this.setIsLoading(`${loaded / total * 100}`);
             console.log(`${loaded / total * 100}`);
@@ -72,16 +60,13 @@ class SpinningRoulette extends Component<{},SpinningRouletteProps>{
         this.renderer.setSize(this.width, this.height);
 
         this.camera = new THREE.PerspectiveCamera(45, this.width / this.height, 0.1, 1000);
-        this.camera.position.z = 3.5;
+        this.camera.position.z = 3.25;
         this.containerRef.current?.appendChild(this.renderer.domElement);
         const animate = () => {
             requestAnimationFrame(animate);
             this.renderer.render(this.scene, this.camera);
-            // cube.rotation.x += 0.01;
-            // cube.rotation.y += 0.01;
-            // cube.material.color = new THREE.Color(document.documentElement.style.getPropertyValue('--g-primary'));
             this.scene.rotation.y += 0.0025;
-            //this.rouletteSpin.position.y += 0.001;
+            light.intensity = document.body.className === "light-theme" ? 4 : 1;
         };
         animate();
     }

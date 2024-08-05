@@ -1,8 +1,9 @@
-import React, {FunctionComponent} from "react";
+import React, {FunctionComponent, useContext} from "react";
 import './homepage.scss';
 import Button from "../../components/Button/Button";
 import Navbar from "../../components/Navbar/Navbar";
 import SpinningRoulette from "../../components/SpinningRoulette/SpinningRoulette";
+
 type homepageProps = {};
 
 const Homepage: FunctionComponent<homepageProps> = ({}) => {

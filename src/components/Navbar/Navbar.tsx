@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useEffect, useState} from "react";
+import React, {FunctionComponent, useEffect, useState, useContext} from "react";
 import './navbar.scss';
 import Button from "../Button/Button";
 import { ReactComponent as Github} from '../../assets/github-icon.svg';
@@ -9,9 +9,11 @@ import ColorPicker from "../ColorPicker/ColorPicker";
 import Switch from "../Switch/Switch";
 import { ReactComponent as Sun} from '../../assets/sun.svg';
 import { ReactComponent as Moon} from '../../assets/moon.svg';
+import PageFocus from "../../contexts/PageFocus";
 
 
 const Navbar:FunctionComponent = () => {
+    const {pageFocus, setPageFocus} = useContext(PageFocus);
     const [theme, setTheme] = useState(localStorage.getItem("page-theme") === "light-theme" ? true : false);
 
     const changeTheme = (switchValue: boolean) => {
@@ -45,7 +47,7 @@ const Navbar:FunctionComponent = () => {
                     </div>
                 </div>
                 <div className="account">
-                    <Button className="btn-secondary">Login</Button>
+                    <Button className="btn-secondary" onClick={() => {setPageFocus("login")}}>Login</Button>
                     <Button className="btn-primary">Sign in</Button>
                 </div>
             </div>

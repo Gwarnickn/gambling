@@ -1,0 +1,52 @@
+@use "src/styles/variables" as *;
+@use "src/styles/breakpoints" as *;
+
+
+.login-page{
+    width: 100vw;
+    height: 100vh;
+    grid-area: 2 / 3 / 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .login-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        .login{ 
+            width: 800px;
+            height: 500px;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: var(--box-shadow);
+        }
+        .go-back{
+            min-width: 50px;
+            min-height: 50px;
+            margin-top: 250px;
+            border-radius: 50%;
+            padding: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: var(--box-shadow);
+            svg{
+                width: 40px;
+                height: 40px;
+                path{
+                    fill: var(--primary);
+                }
+            }
+            &:hover{
+                box-shadow: var(--box-shadow-inset);
+                background-color: var(--primary);
+                svg{
+                    path{
+                        fill: var(--dark);
+                    }
+                }
+            }
+        }
+    }
+}

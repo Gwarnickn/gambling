@@ -6,7 +6,7 @@
 *{
     margin: 0px;
     padding: 0px;
-    transition-property: background-color, box-shadow, filter, text-shadow;
+    transition-property: background-color, box-shadow, filter, text-shadow, fill, stroke;
     transition-duration: 0.25s;
 }
 
@@ -14,8 +14,44 @@
 body{
     font-family: $primary-font;
     font-weight: 200;
-    overflow-x: hidden;
+    background-color: var(--background);
     color: var(--font-color);
+    overflow: hidden;
+}
+
+.app{
+  position: absolute;
+  width: 500vw;
+  height: 500vh;
+  display: grid;
+  grid-template-columns: repeat(5, 100vw);
+  grid-template-rows: repeat(5, 100vh);
+  transition-property: top, left;
+  transition-duration: 0.75s;
+}
+.app-focus-homepage{
+  left: -200vw;
+  top: -200vh;
+}
+.app-focus-login{
+  left: -200vw;
+  top: -100vh;
+}
+
+.moving-true{
+  animation: move 1s;
+}
+
+@keyframes move {
+  0%{
+    transform: perspective(1000px) translateZ(0px);
+  }
+  50%{
+    transform: perspective(1000px) translateZ(-150px);
+  }
+  100%{
+    transform: perspective(1000px) translateZ(0px);
+  }
 }
 
 .is-size-1 {
