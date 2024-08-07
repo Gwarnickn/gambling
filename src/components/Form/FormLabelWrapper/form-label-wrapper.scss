@@ -1,0 +1,14 @@
+@use "src/styles/variables" as *;
+@use "src/styles/breakpoints" as *;
+
+.form-label-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .label{
+        text-align: start;
+        color: var(--light);
+        font-size: $font-size-8;
+    }
+}

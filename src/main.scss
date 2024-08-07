@@ -27,7 +27,7 @@ body{
   grid-template-columns: repeat(5, 100vw);
   grid-template-rows: repeat(5, 100vh);
   transition-property: top, left;
-  transition-duration: 0.75s;
+  transition-duration: 1s;
 }
 .app-focus-homepage{
   left: -200vw;
@@ -39,18 +39,18 @@ body{
 }
 
 .moving-true{
-  animation: move 1s;
+  transition-duration: 1s;
 }
 
 @keyframes move {
   0%{
-    transform: perspective(1000px) translateZ(0px);
+    transform: scale(1);
   }
   50%{
-    transform: perspective(1000px) translateZ(-150px);
+    transform: scale(0.9);
   }
   100%{
-    transform: perspective(1000px) translateZ(0px);
+    transform: scale(1);
   }
 }
 

@@ -1,14 +1,14 @@
 import React, { Component, useState } from "react";
 import * as THREE from 'three';
 import './spinning-roulette.scss';
-import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'; 
+
 interface SpinningRouletteProps{
     isLoading: string;
 }
 
 class SpinningRoulette extends Component<{},SpinningRouletteProps>{ 
-    private containerRef: React.RefObject<HTMLDivElement>;
+    private container: React.RefObject<HTMLDivElement>;
     private scene: THREE.Scene;
     private renderer: THREE.WebGLRenderer;
     private camera: THREE.PerspectiveCamera;
@@ -23,7 +23,7 @@ class SpinningRoulette extends Component<{},SpinningRouletteProps>{
         this.state = {
             isLoading: '0', 
         };
-        this.containerRef = React.createRef<HTMLDivElement>();
+        this.container = React.createRef<HTMLDivElement>();
         this.scene = new THREE.Scene();
         this.renderer = new THREE.WebGLRenderer();
         this.camera = new THREE.PerspectiveCamera();
@@ -38,7 +38,7 @@ class SpinningRoulette extends Component<{},SpinningRouletteProps>{
     componentDidMount() {
         this.scene = new THREE.Scene();
         const light = new THREE.AmbientLight("#ffffff",1);
-        light.name = "light";
+
         this.scene.add(light);
         this.loadingManager.onProgress = async (url, loaded, total) => {
             this.setIsLoading(`${loaded / total * 100}`);
@@ -60,8 +60,9 @@ class SpinningRoulette extends Component<{},SpinningRouletteProps>{
         this.renderer.setSize(this.width, this.height);
 
         this.camera = new THREE.PerspectiveCamera(45, this.width / this.height, 0.1, 1000);
+
         this.camera.position.z = 3.25;
-        this.containerRef.current?.appendChild(this.renderer.domElement);
+        this.container.current?.appendChild(this.renderer.domElement);
         const animate = () => {
             requestAnimationFrame(animate);
             this.renderer.render(this.scene, this.camera);
@@ -72,12 +73,12 @@ class SpinningRoulette extends Component<{},SpinningRouletteProps>{
     }
 
     componentWillUnmount() {
-        this.containerRef.current?.removeChild(this.renderer.domElement);
+        this.container.current?.removeChild(this.renderer.domElement);
     }
 
     render() {
         return <div className={`spinning-roulette loaded-${this.state.isLoading}`}>
-            <div className="spinning-roulette-model3D" ref={this.containerRef}/>
+            <div className="spinning-roulette-model3D" ref={this.container}/>
             <div className="spinning-roulette-loading">{this.state.isLoading}%</div>
         </div>
     }
