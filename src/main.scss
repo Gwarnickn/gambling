@@ -28,14 +28,25 @@ body{
   grid-template-rows: repeat(5, 100vh);
   transition-property: top, left;
   transition-duration: 1s;
-}
-.app-focus-homepage{
   left: -200vw;
   top: -200vh;
+  //transform: scale(0.2);
 }
-.app-focus-login{
-  left: -200vw;
-  top: -100vh;
+.app-focus-homepage{
+  left: -200vw !important;
+  top: -200vh !important;
+}
+.app-focus-log-in{
+  left: -200vw !important;
+  top: -100vh !important;
+}
+.app-focus-sign-up{
+  left: -200vw !important;
+  top: 0vh !important;
+}
+.app-focus-password-reset{
+  left: -100vw !important;
+  top: -100vh !important;
 }
 
 .moving-true{
@@ -52,6 +63,22 @@ body{
   100%{
     transform: scale(1);
   }
+}
+
+.nav-link{
+  all: unset;
+}
+
+.primary-text{
+  color: var(--primary);
+}
+
+.glow{
+  text-shadow: var(--drop-shadow-primary-strong);
+}
+
+.cursor-pointer{
+  cursor: pointer;
 }
 
 .is-size-1 {

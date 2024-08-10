@@ -42,6 +42,7 @@ body.dark-theme{
         &:checked{
             border: 1px solid var(--primary);
             background-color: var(--primary);
+            box-shadow: var(--drop-shadow-primary);
             &::before{
                 content: '✓';
                 color: var(--dark);

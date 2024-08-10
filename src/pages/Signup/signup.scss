@@ -1,20 +1,19 @@
 @use "src/styles/variables" as *;
 @use "src/styles/breakpoints" as *;
 
-
-.login-page{
+.signup-page{
     width: 100vw;
     height: 100vh;
-    grid-area: 2 / 3 / 2 / 3;
+    grid-area: 1 / 3 / 1 / 3;
     display: flex;
     justify-content: center;
     align-items: center;
-    .login-wrapper{
+    .signup-wrapper{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        .login{ 
+        .signup{ 
             width: 450px;
             border-radius: 8px;
             padding: 16px;
@@ -24,7 +23,7 @@
             text-align: center;
             gap: 16px;
             margin-bottom: 250px;
-            .login-logo{
+            .signup-logo{
                 display: grid;
                 width: 300px;
                 height: 150px;
@@ -40,7 +39,7 @@
                         fill: var(--secondary);
                     }
                 }
-                .login-logo-text{
+                .signup-logo-text{
                     display: flex;
                     justify-content: center;
                     text-align: center;
@@ -62,17 +61,17 @@
                         }
                         filter: drop-shadow(var(--drop-shadow-primary));
                     }
-                    .login-logo-text{
+                    .signup-logo-text{
                         margin-top: 24px;
                         opacity: 1;
                         filter: blur(0px);
                     }
                 }
             }
-            .login-header{
+            .signup-header{
                 font-size: $font-size-3;
             }
-            .login-form{
+            .signup-form{
                 width: 100%;
                 display: flex;
                 flex-direction: column;

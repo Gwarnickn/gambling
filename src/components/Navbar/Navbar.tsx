@@ -10,6 +10,7 @@ import Switch from "../Switch/Switch";
 import { ReactComponent as Sun} from '../../assets/sun.svg';
 import { ReactComponent as Moon} from '../../assets/moon.svg';
 import PageFocus from "../../contexts/PageFocus";
+import { NavLink } from "react-router-dom";
 
 
 const Navbar:FunctionComponent = () => {
@@ -36,19 +37,19 @@ const Navbar:FunctionComponent = () => {
             </div>
             <div className="account-and-media">
                 <div className="media-container">
-                    <div className="media">
-                        <a href="" target="blank"><Twitter/></a>
-                    </div>
-                    <div className="media">
-                        <a href="https://www.linkedin.com/in/nikita-gwardiak-49593031a/" target="blank"><Linkedin/></a>
-                    </div>
-                    <div className="media">
-                        <a href="https://github.com/Gwarnickn/gambling" target="blank"><Github/></a>
-                    </div>
+                    <a href="" target="blank"><div className="media">
+                        <Twitter/>
+                    </div></a>
+                    <a href="https://www.linkedin.com/in/nikita-gwardiak-49593031a/" target="blank"><div className="media">
+                        <Linkedin/>
+                    </div></a>
+                    <a href="https://github.com/Gwarnickn/gambling" target="blank"><div className="media">
+                        <Github/>
+                    </div></a>
                 </div>
                 <div className="account">
-                    <Button className="btn-secondary" onClick={() => {setPageFocus("login")}}>Login</Button>
-                    <Button className="btn-primary">Sign in</Button>
+                    <NavLink to="log-in" className="nav-link"><Button className="btn-secondary">Log in</Button></NavLink>
+                    <NavLink to="sign-up" className="nav-link"><Button className="btn-primary">Sign up</Button></NavLink>
                 </div>
             </div>
         </div>
