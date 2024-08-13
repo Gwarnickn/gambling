@@ -25,3 +25,30 @@
         font-size: $font-size-8 * 0.91 !important;
     }
 }
+
+.svg-with-input{
+    display: flex;
+    align-items: center;
+    svg{
+        width: 32px;
+        height: 32px;
+        margin: 0px 8px;
+        path,rect{
+            stroke: var(--primary-op30);
+        }
+        circle{
+            fill:  var(--primary-op30);
+        }
+    }
+    &:has(input:valid){
+        svg{
+            path,rect{
+                stroke: var(--primary);
+            }
+            circle{
+                fill:  var(--primary);
+            }
+            filter: drop-shadow(var(--drop-shadow-primary));
+        }
+    }
+}

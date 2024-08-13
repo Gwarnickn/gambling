@@ -6,7 +6,7 @@ type InputProps = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputEle
     name: string;
 };
 
-const Input:React.FunctionComponent<InputProps> = ({className, name, id, placeholder, required, type}) => {
+const Input:React.FunctionComponent<InputProps> = ({className, name, id, placeholder, required, type, pattern, ...props}) => {
 
     return(
         <input
@@ -16,6 +16,8 @@ const Input:React.FunctionComponent<InputProps> = ({className, name, id, placeho
             placeholder={placeholder}
             required={required}
             type={type}
+            pattern={pattern}
+            {...props}
         />
     )
 }

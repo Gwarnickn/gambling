@@ -6,6 +6,7 @@ import { FormInput } from "../../components/Form/FormInput";
 import Button from "../../components/Button/Button";
 import { Checkbox } from "../../components/Form/Common/Checkbox/Checkbox";
 import { NavLink } from "react-router-dom";
+import { ReactComponent as EmailIcon } from '../../assets/email.svg';
 
 const PasswordReset = () =>{
 
@@ -20,7 +21,10 @@ const PasswordReset = () =>{
                     <div className="password-reset-header">Password reset</div>
                     <div className="">Enter the e-mail address associated with your account and we'll send you a link to reset your password.</div>
                     <form className="password-reset-form" action="#" >
-                        <FormInput name="email" type="email" placeholder="e-mail" required/>
+                        <div className="svg-with-input">
+                            <EmailIcon/>
+                            <FormInput name="email" type="email" placeholder="e-mail" required/>
+                        </div>
                         <Button type="submit" className="btn-primary">Continue</Button>
                     </form>
                     <div>

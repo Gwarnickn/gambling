@@ -26,9 +26,11 @@
     min-width: 166.08px;
     min-height: 36px;
     svg {
-        transition: all 0.25s;
         width: 148.08px;
         height: 34px;
+        #SvgjsG2652,#SvgjsG2653{
+            transition: all 0s;
+        }
     }
     &:hover{
         svg {

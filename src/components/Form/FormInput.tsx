@@ -8,6 +8,7 @@ type Props = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>
     label?: string;
     value?: any;
     type?: string;
+    pattern?: string;
 };
 
 export const FormInput: React.FunctionComponent<Props> = (
@@ -19,18 +20,19 @@ export const FormInput: React.FunctionComponent<Props> = (
         className,
         required,
         type,
+        pattern,
         ...props
     }) => {
     if (label) {
         return (
             <FormLabelWrapper label={label} id={id} required={required} className={className}>
-                <Input name={name} id={id} value={value} required={required} type={type} {...props}/>
+                <Input name={name} id={id} value={value} required={required} type={type} pattern={pattern} {...props}/>
             </FormLabelWrapper>
         )
 
     } else {
         return (
-            <Input name={name} id={id} value={value} required={required} type={type} {...props}/>
+            <Input name={name} id={id} value={value} required={required} type={type} pattern={pattern} {...props}/>
         );
     }
 };

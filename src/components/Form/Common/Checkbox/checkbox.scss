@@ -15,7 +15,6 @@ body.dark-theme{
 
 .checkbox-wrapper{
     display: flex;
-    padding: 4px;
     justify-content: flex-start;
     align-items: center;
     input{
@@ -24,6 +23,7 @@ body.dark-theme{
         min-width: 24px;
         border: 1px solid var(--border);
         border-radius: 8px;
+        margin: 0px 2px 0px 8px;
         box-shadow: var(--box-shadow-inherit);
         transition: all 0.25s;
         font-size: $font-size-8;
@@ -48,10 +48,29 @@ body.dark-theme{
                 color: var(--dark);
             }
         }
-        
     }
     .text{
         margin-left: 8px;
         font-size: $font-size-8;
+        .nav-link-text{
+            transition: all 0.25s;
+            color: var(--secondary) !important;
+            text-shadow: unset !important;
+            cursor: pointer;
+            &:hover{
+                color: var(--primary) !important;
+                text-shadow: var(--drop-shadow-primary-strong) !important;
+            }
+        }
     }
+    &:has(input:checked){
+        .text{
+            .nav-link-text{
+                color: var(--primary) !important;
+                text-shadow: var(--drop-shadow-primary-strong) !important;
+                cursor: pointer;
+            }
+        }
+    }
+    
 }

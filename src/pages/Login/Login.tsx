@@ -6,22 +6,30 @@ import { FormInput } from "../../components/Form/FormInput";
 import Button from "../../components/Button/Button";
 import { Checkbox } from "../../components/Form/Common/Checkbox/Checkbox";
 import { NavLink } from "react-router-dom";
+import { ReactComponent as UserIcon } from '../../assets/user.svg';
+import { ReactComponent as PasswordIcon } from '../../assets/password.svg';
 
 const Login = () => {
 
     return(
-        <div className="login-page">
-            <div className="login-wrapper">
-                <div className="login">
-                    <div className="login-logo">
+        <div className="log-in-page">
+            <div className="log-in-wrapper">
+                <div className="log-in">
+                    <div className="log-in-logo">
                         <LogoIcon/>
-                        <div className="login-logo-text">ComfyClicker</div>
+                        <div className="log-in-logo-text">ComfyClicker</div>
                     </div>
-                    <div className="login-header">Log in</div>
+                    <div className="log-in-header">Log in</div>
                     <div className="">Log in and embark on an amazing journey with the comfiest clicker and a graceful experience.</div>
-                    <form className="login-form" action="#" >
-                        <FormInput name="email" type="email" placeholder="e-mail" required/>
-                        <FormInput name="password" type="password" placeholder="password" required/>
+                    <form className="log-in-form" action="#" >
+                        <div className="svg-with-input">
+                            <UserIcon/>
+                            <FormInput name="email" type="email" placeholder="e-mail" required/>
+                        </div>
+                        <div className="svg-with-input">
+                            <PasswordIcon/>
+                            <FormInput name="password" type="password" placeholder="password" required/>
+                        </div>
                         <div className="form-row">
                             <Checkbox name="XD">Remember me</Checkbox>
                             <NavLink to="password-reset" className="nav-link"><Button className="btn-invisible">Forgot password?</Button></NavLink>
