@@ -1,0 +1,44 @@
+@use "src/styles/variables" as *;
+@use "src/styles/breakpoints" as *;
+
+.spacer{
+    width: 100%;
+    display: grid;
+    display: flex;
+    margin: 32px 0px 16px 0px;
+    .spacer-line{
+        height: 5px;
+        background-color: var(--secondary);
+        border-radius: 2.5px;
+        flex: 1;
+    }
+    .spacer-line-header{
+        line-height: 5px;
+        height: 5px;
+        padding: 0px 16px;
+        background-color: var(--background);
+        text-align: center;
+        font-weight: 500;
+        color: var(--light-hover);
+        transition: color 0.25s;
+    }
+    &:hover{
+        .spacer-line{
+            background-color: var(--primary);
+            box-shadow: var(--drop-shadow-primary);
+        }
+        .spacer-line-header{
+            color: var(--light);
+        }
+    }
+}
+.position-left{
+    .spacer-left{
+        flex: 0.075;
+    }
+}
+.position-right{
+    .spacer-right{
+        flex: 0.075;
+    }
+}

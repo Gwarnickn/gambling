@@ -6,12 +6,16 @@ import PageFocus from './contexts/PageFocus';
 import { useLocation } from 'react-router-dom';
 import Signup from './pages/Signup/Signup';
 import PasswordReset from './pages/PasswordReset/PasswordReset';
+import About from './pages/About/About';
+import TermsOfService from './pages/TermsOfService/TermsOfService';
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 
 function App() {
   const location = useLocation();
 
   const [pageFocus, setPageFocus] = useState<string | null>(localStorage.getItem('page-focus') || "homepage");
   const [isMoving, setIsMoving] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   document.body.className = localStorage.getItem("page-theme") === "light-theme" ? "light-theme" : "dark-theme";
   const color = localStorage.getItem("primary-color") || "#ff4d00";
@@ -29,6 +33,14 @@ function App() {
     },1000)
   },[pageFocus])
 
+  loading && localStorage.setItem("page-status", "loading");
+  useEffect(() =>{
+    setTimeout(() =>{
+      localStorage.setItem("page-status", "loaded");
+      setLoading(false);
+    },1000);
+  },[])
+
   // useEffect(() =>{
   //   setPageFocus(location.pathname.slice(1,location.pathname.length))
   // },[pageFocus])
@@ -44,9 +56,9 @@ function App() {
         <Login/>
         <Signup/>
         <PasswordReset/>
-        <div style={{backgroundColor: "yellow"}}></div>
-        <div style={{backgroundColor: "purple"}}></div>
-        <div style={{backgroundColor: "gray"}}></div>
+        <About/>
+        <TermsOfService/>
+        <PrivacyPolicy/>
         <div style={{backgroundColor: "red"}}></div>
         <div style={{backgroundColor: "green"}}></div>
         <div style={{backgroundColor: "blue"}}></div>

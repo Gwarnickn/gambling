@@ -18,10 +18,10 @@ const Signup = () =>{
         <div className="signup-page">
             <div className="signup-wrapper">
                 <div className="signup">
-                    <div className="signup-logo">
+                    <NavLink to="about" className="nav-link"><div className="signup-logo">
                         <LogoIcon/>
-                        <div className="signup-logo-text">ComfyClicker</div>
-                    </div>
+                        <div className="signup-logo-text">ComfyCoiner</div>
+                    </div></NavLink>
                     <div className="signup-header">Sign up</div>
                     <div>Sign up and begin an incredible adventure with the coziest clicker and a seamless experience.</div>
                     <form className="signup-form">
@@ -41,7 +41,7 @@ const Signup = () =>{
                             <ConfirmPasswordIcon/>
                             <FormInput name="repeated-password" type="password" pattern=".{8,}" placeholder="confirm password" required/>
                         </div>
-                        <Checkbox name="accept_terms_and_privacy">I agree to the <NavLink to="password-reset" className="nav-link nav-link-text">terms of service</NavLink> and <NavLink to="password-reset" className="nav-link nav-link-text">privacy policy</NavLink></Checkbox>
+                        <Checkbox name="accept_terms_and_privacy">I agree to the <NavLink to="terms-of-service" className="nav-link nav-link-text">terms of service</NavLink> and <NavLink to="privacy-policy" className="nav-link nav-link-text">privacy policy</NavLink></Checkbox>
                         <Button type="submit" className="btn-primary">Sign up</Button>
                     </form>
                     <div>

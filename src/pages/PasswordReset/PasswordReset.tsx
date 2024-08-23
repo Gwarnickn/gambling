@@ -14,10 +14,10 @@ const PasswordReset = () =>{
         <div className="password-reset-page">
             <div className="password-reset-wrapper">
                 <div className="password-reset">
-                    <div className="password-reset-logo">
+                    <NavLink to="about" className="nav-link"><div className="password-reset-logo">
                         <LogoIcon/>
                         <div className="password-reset-logo-text">ComfyClicker</div>
-                    </div>
+                    </div></NavLink>
                     <div className="password-reset-header">Password reset</div>
                     <div className="">Enter the e-mail address associated with your account and we'll send you a link to reset your password.</div>
                     <form className="password-reset-form" action="#" >

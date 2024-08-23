@@ -15,10 +15,10 @@ const Login = () => {
         <div className="log-in-page">
             <div className="log-in-wrapper">
                 <div className="log-in">
-                    <div className="log-in-logo">
+                    <NavLink to="about" className="nav-link"><div className="log-in-logo">
                         <LogoIcon/>
-                        <div className="log-in-logo-text">ComfyClicker</div>
-                    </div>
+                        <div className="log-in-logo-text">ComfyCoiner</div>
+                    </div></NavLink>
                     <div className="log-in-header">Log in</div>
                     <div className="">Log in and embark on an amazing journey with the comfiest clicker and a graceful experience.</div>
                     <form className="log-in-form" action="#" >

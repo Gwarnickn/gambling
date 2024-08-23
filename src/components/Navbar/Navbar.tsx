@@ -30,7 +30,7 @@ const Navbar:FunctionComponent = () => {
     return(
         <div className="navbar">
             <div className="buttons">
-                <Button className="btn-secondary btn-logo"><Logo/></Button>
+                <NavLink to="about" className="nav-link"><Button className="btn-secondary btn-logo"><Logo/></Button></NavLink>
                 <ColorPicker/>
                 <Switch handleChange={changeTheme} defaultValue={theme}/> 
                 <div className={`theme-box theme-${theme ? "light" : "dark"}`}>{theme ? <Sun/> : <Moon/>}</div>

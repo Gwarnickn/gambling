@@ -49,6 +49,13 @@ body.dark-theme{
 
     --font-color: var(--g-light);
 
+
+    --box-shadow-horizontal:
+        -4px 0px 10px var(--g-gray-1-op05),
+        4px 0px 10px var(--g-black-op03),
+        inset 0px 0px 0px var(--g-gray-1-op03),
+        inset 0px 0px 0px var(--g-black-op05);
+
     --box-shadow: 
         -4px -4px 10px var(--g-gray-1-op05),
         4px 4px 10px var(--g-black-op03),

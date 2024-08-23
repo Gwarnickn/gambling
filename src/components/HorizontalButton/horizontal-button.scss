@@ -1,0 +1,52 @@
+@use "src/styles/variables" as *;
+@use "src/styles/breakpoints" as *;
+
+.horizontal-btn{
+    display: flex;
+    display: grid;
+    grid-template-columns: 48px auto 48px;
+    padding: 8px;
+    box-shadow: var(--box-shadow);
+    border-radius: 8px;
+    cursor: pointer;
+    .arrow{
+        min-height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg{
+            width: 48px;
+            height: 48px;
+            path{
+                fill: var(--primary);
+            }
+        }
+    }
+    .up{
+        transform: rotate(180deg) !important;
+    }
+    .horizontal-btn-text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $font-size-7;
+        transition: all 0.25s;
+    }
+    &:hover{
+        box-shadow: var(--box-shadow-inset);
+        cursor: pointer;
+        background-color: var(--primary);
+        .arrow{
+            svg{
+                width: 48px * 0.91;
+                height: 48px * 0.91;
+                path{
+                    fill: var(--dark);
+                }
+            }
+        }
+        .horizontal-btn-text{
+            font-size: $font-size-7 * 0.91;
+        }
+    }
+}
